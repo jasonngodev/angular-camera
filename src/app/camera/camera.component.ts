@@ -20,6 +20,7 @@ export class CameraComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit(): void {
     WebcamUtil.getAvailableVideoInputs()
       .then((mediaDevices: MediaDeviceInfo[]) => {
@@ -42,6 +43,7 @@ export class CameraComponent implements OnInit {
   changeWebCame(directionOrDeviceId: boolean | string) {
     this.nextWebcam.next(directionOrDeviceId);
   }
+
   handleImage(webcamImage: WebcamImage) {
     this.getPicture.emit(webcamImage);
     this.showWebcam = false;
@@ -54,6 +56,4 @@ export class CameraComponent implements OnInit {
   get nextWebcamObservable(): Observable<boolean | string> {
     return this.nextWebcam.asObservable();
   }
-
-
 }

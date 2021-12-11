@@ -7,7 +7,8 @@ import { WebcamImage } from 'ngx-webcam';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  webcamImage: WebcamImage = null;
+  title = 'cameraApp';
+  webcamImage: WebcamImage | undefined;
 
   handleImage(webcamImage: WebcamImage) {
     this.webcamImage = webcamImage;
